@@ -1,0 +1,168 @@
+.price-details {
+    border: 1px solid rgba(0, 0, 0, 0.1882352941);
+    border-radius: 13px;
+    padding: 20px;
+    width: 450px;
+    height: 500px;
+    // margin: 32px auto 10px;
+
+    margin-left: 76px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+
+    .top-section {
+        display: flex;
+
+        .second {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .host-img {
+                align-self: end;
+            }
+
+            .stay-name {
+                font-size: 14px;
+                color: #222222;
+                font-family: Circular, -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif;
+                margin-left: 20px;
+            }
+        }
+    }
+
+    .details-img {
+        height: 120px;
+        width: 120px;
+
+        img {
+            height: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+            aspect-ratio: 1/1;
+        }
+    }
+
+    .host-img {
+        height: 35px;
+        width: 35px;
+
+        img {
+            border-radius: 50%;
+            height: 100%;
+        }
+    }
+}
+
+*:has(.payment-page)header {
+    height: auto;
+}
+
+.payment-page {
+    display: flex;
+    // justify-content: space-evenly;
+    justify-content: center;
+    translate: 0% 15%;
+
+    .payment-title {
+        margin-bottom: 20px;
+    }
+}
+
+.left-side {
+    .btn-container {
+        translate: 1%;
+    }
+}
+
+.good-deal {
+    padding-inline: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.1882352941);;
+    border-radius: 24px;
+    padding-block-start: 20px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+
+    .title{
+        position: relative;
+        svg{
+            position: absolute;
+            top: 5px;
+            right: 0px;
+        }
+    }
+    .deal-content {
+        padding-top: 10px;
+        font-family: 'Cereal';
+    }
+    .diamond{
+        right: 0;
+        top: 0;
+    }
+}
+
+.trip-display {
+    h2 {
+        margin-block: 35px;
+    }
+
+    .trip-guests {
+        margin-block: 35px;
+        margin-bottom: 45px;
+    }
+
+    .dates,
+    .guests {
+        font-size: 14px;
+        font-family: Cereal;
+        font-weight: $bold;
+    }
+
+
+}
+
+.middle-section {
+    display: flex;
+    margin-top: 20px;
+    padding-block: 20px;
+    border-block: 1.5px solid lightgray;
+
+    .text {
+        font-size: 14px;
+        font-weight: 600;
+        color: #222222;
+        font-family: Circular, -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif;
+        margin-left: 20px;
+    }
+
+    .share-cover-img {
+        height: 13px;
+        width: 79px;
+
+
+    }
+
+}
+
+.bottom-section {
+    display: flex;
+    flex-direction: column;
+
+    .bottom-title {
+        margin-top: 20px;
+    }
+
+    .price {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-block-start: 10px;
+        font-family: Cereal;
+        font-size: 0.97em;
+        letter-spacing: 0px;
+    }
+
+    .total {
+        padding-top: 20px;
+        margin-top: 15px;
+        border-top: 1.5px solid lightgray;
+    }
+}

@@ -1,0 +1,70 @@
+// Setup
+@import "setup/variables";
+@import "setup/functions";
+@import "setup/mixins";
+// @import "setup/typography";
+// @import "../styles/setup/_typography.scss";
+
+@import 'v-calendar/dist/style.css';
+
+
+// Basics
+@import "basics/helpers";
+@import "basics/layout";
+@import "basics/base";
+@import "basics/links";
+@import "basics/forms";
+
+
+
+
+// Components
+@import "cmps/app-header";
+@import "cmps/app-footer";
+@import "cmps/mobile-footer";
+@import "cmps/user-msg";
+@import "cmps/stay-preview";
+@import "cmps/stay-list";
+@import "cmps/filter-modal";
+@import "cmps/review-list";
+@import "cmps/details-achievements";
+@import "cmps/details-photo-display";
+@import "cmps/details-description";
+@import "cmps/maps-filter";
+@import "cmps/details-options-list";
+@import "cmps/details-schedule";
+@import "cmps/details-reviews-list";
+@import "cmps/details-order";
+@import "cmps/payment-page";
+@import "cmps/chart-dashboard";
+
+// @import 'cmps/gardient-btn.scss';
+
+// @import 'cmps/host-stays.scss';
+@import 'cmps/date-picker';
+
+@import "cmps/car-list";
+
+@import "cmps/header-filter";
+// @import "cmps/preview";
+
+@import "cmps/user-login";
+@import 'cmps/gardient-btn';
+@import 'cmps/search-labels';
+@import 'cmps/main-nav';
+
+
+// Views
+@import 'views/stay-app';
+// @import 'views/home';
+@import "views/stay-details";
+@import "views/user-trip";
+// @import "views/login-signup";
+@import 'views/dashboard';
+// @import 'views/host-create-stay';
+// @import 'views/user-trips';
+// @import 'views/become-host';
+
+
+
+

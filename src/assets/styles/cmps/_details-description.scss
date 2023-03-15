@@ -1,0 +1,39 @@
+.description-display{
+        grid-column: 1/1;
+        grid-row: 2/2;
+        height: fit-content;
+
+        margin-block-start: 26px;
+        padding-block-end: 20px;
+        border-bottom: 1.5px solid $clr6;
+
+        .short-description{
+                font-family: Cereal;
+                color: $minorTxt;
+                font-size: 0.9em;
+                margin-block: 12px ; 
+        }
+
+        .show-more-btn {
+                display: flex;
+                flex-direction: row;
+
+                width: fit-content;
+                margin-inline-start: 0px;
+                padding-inline-start: 0px;
+                padding-block-end: 12px;
+
+                background-color: transparent;
+                color: $clr1;
+                font-family: Circular-hm;
+                font-size: 1rem;
+                letter-spacing: 0px;
+                text-decoration: underline;
+                cursor: pointer;
+
+                > svg{
+                        align-self: center;
+                        margin-inline-start: 5px;
+                }
+        }
+}

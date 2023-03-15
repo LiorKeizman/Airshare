@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: $clr1;
+    color: $clr6;
+}
+
+html {
+    font-family: 'Cereal';
+    color: $clr1;
+}
+
+body {
+    font-size: rem(18px);
+    margin: 0;
+    font-family: 'Cereal-bold';
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 0.6em;
+    line-height: 1;
+}
+
+h1{
+      font-family: 'Cereal-medium', Helvetica, sans-serif;
+}
+
+h2 {
+    font-size: em(24px);
+  }
+  p {
+    margin: 0;
+    padding: 0;
+    line-height: em(24px);
+  }
+
+  .stared::before {
+    content: '\e838';
+    font-family: 'Material Icons';
+  }
+  .stared {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+  .overlay {
+    background: rgba(0, 0, 0, 0.3803921569);
+    width: 100%;
+    height: 105vh;
+    position: absolute;
+    z-index: 3;
+    transition: all 200ms ease-out;
+    overflow: auto;
+  }
+  .overlay-modal {
+    background: rgba(0, 0, 0, 0.3803921569);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 100;
+    transition: all 200ms ease-out;
+    overflow: auto;
+  }
+  .overlay-explore {
+    background: white;
+    width: 100%;
+    height: 10vh;
+    position: absolute;
+    z-index: 101;
+    transition: all 200ms ease-out;
+    overflow: auto;
+  }
+  
+
+// section,main, footer {
+    // padding: 5px;
+// }
+
+// img {
+//     width: 100%;
+// }
+
+p {
+    margin: 0 0 1em;
+    max-width: 40ch;
+    line-height: em(24px);
+}
+
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+

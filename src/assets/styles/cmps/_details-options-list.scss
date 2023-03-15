@@ -1,0 +1,46 @@
+.options-icons-display{
+        grid-column: 1/1;
+        grid-row: 3/3;
+        height: fit-content;
+
+        border-bottom: 1.5px solid $clr6;
+        margin-block-start: 35px;
+        margin-block-end: 35px;
+        padding-block-end: 18px;
+
+        .options-title{
+                font-size: 1.23em;
+                margin-block-end: 30px;
+                font-family: 'Circular',-apple-system,'BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+                font-weight: 600;
+                text-size-adjust: 100%;
+                // color:lighten($color: #222222, $amount: 5%) ;
+                color: #222222 ;
+        }
+
+        .options-icon-container{
+
+                display: grid;
+                grid-template-columns: minmax(200px,300px) minmax(200px,300px);
+                grid-template-rows: repeat(5, 1fr);
+
+                gap: 15px;
+                margin-block-end: 20px;
+                
+                .amenitie-wrapper{
+                        display: flex;
+                        flex-direction: row;
+                        
+                        font-family: Cereal;
+                        color: $minorTxt;
+                        font-size: 0.9em;
+
+                        > svg{
+                                margin-inline-end: 15px;
+                        }
+
+                }
+                        
+        }
+        
+}

@@ -1,0 +1,48 @@
+.stats-card.trip {
+    box-shadow: #0000001f 0 6px 16px;
+    border: 1px solid $clr6;
+    border-radius: 15px;
+    
+    padding: 15px;
+    margin-bottom: 40px;
+    width: 100%;
+    font-size:14px ;
+    margin-left: 15px;
+    img{
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+        border-radius: 15px;
+       
+    }
+  }
+  .users-trips-layout{
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    grid-auto-rows: auto;
+    gap: 25px;
+  }
+  .stats-card-right{
+    box-shadow: #0000001f 0 6px 16px;
+    border: 1px solid $clr6;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 40px;
+    // margin-right: 40px;
+    width: 95%;
+    font-size:14px ;
+    .stay-brand{
+      color: $clr2;
+      font-family:'Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;' ;
+        font-weight: $bold;
+        font-size: 18px;
+    }
+    .rev-stat.trip{
+        font-family:'Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;' ;
+        font-weight: $medium;
+        font-size: 14px;
+    }
+    .rev-stat.trip:nth-last-child(1){
+        padding-bottom: 0px;
+    }
+  }

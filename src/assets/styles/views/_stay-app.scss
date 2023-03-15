@@ -1,0 +1,42 @@
+// .container{
+//     margin: auto;
+//     max-width: 100%;
+//     // padding: 20px;
+// }
+// .main-layout {
+//     display: grid;
+//     grid-template-columns: 80px 1fr 80px;
+
+//     >* {
+//         grid-column: 2/3;
+//     }
+
+//     >*.full {
+//         grid-column: 1 / -1;
+//     }
+
+//     // >*:not(.full) {
+//     //     display: grid;
+//     //     grid-auto-flow: dense;
+//     //     grid-template-columns: repeat(6, 1fr);
+//     // }
+// }
+
+// .stay-app {
+//     display: grid;
+//     grid-template-columns: 100px 1fr 100px;
+
+//     > * {
+//         grid-column: 2;
+//     }
+
+//     > *.full {
+//         grid-column: 1 / -1;
+//     }
+// }
+
+// .stay-filter-container {
+//     margin-top: 30px;
+//     // display: flex;
+//     z-index: 5;
+// }

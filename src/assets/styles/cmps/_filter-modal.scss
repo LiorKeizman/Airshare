@@ -1,0 +1,375 @@
+.form-filter {
+    background-color: #fff;
+    max-width: 780px;
+    height: 91vh;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 50%;
+    transform: translate(50%, 3%);
+    width: 100%;
+    box-shadow: #00000047 0 8px 28px;
+    border-radius: 12px;
+    overflow: hidden;
+
+    .filter-header {
+        display: flex;
+        align-items: center;
+        height: 9.8%;
+        border-bottom: 1px solid #dddddd;
+
+        .close-filter {
+            flex: .8;
+            padding: 0 10px;
+            button{
+                padding-top: 10px;
+                background-color: #fff;
+                img{
+                    // height: 16px;
+                    width: 16px;
+                }
+            }
+            button:hover{
+                background-color: $clr8;
+                border-radius: 50%;
+                // height: 24px !important;
+                // width: 24px !important;
+                text-align: center;
+                cursor: pointer;
+            }
+
+        }
+       
+        
+        h2 {
+            flex: 1;
+            font-size: 17px;
+            margin-bottom: 0;
+        }
+    }
+
+    .filter-content {
+        position: relative;
+        height: 80%;
+        padding: 0 24px;
+        overflow-y: auto;
+    }
+
+
+}
+
+.price-filter {
+    padding: 20px 0;
+    border-bottom: 1px solid #dddddd;
+
+    h2 {
+        margin-bottom: 0.3em;
+        font-family: Cereal, Helvetica, sans-serif;
+        font-size: 1.25em;
+    }
+    p{
+        font-family: Cereal;
+        font-size: 16px;
+    }
+
+    .form-inputs {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        margin: auto;
+    }
+    .form-input{
+        gap: 3.5px;
+        align-items: center;
+        input{
+            color: #222222;
+            font-size: 16.5px;
+            font-family: 'Cereal';
+        }
+    }
+
+    .inner-price {
+        display: flex;
+        flex-direction: column;
+        box-shadow: #b0b0b0 0 0 0 1px inset;
+        height: 56px;
+        border-radius: 8px;
+        overflow: hidden;
+        justify-content: end;
+        box-sizing: border-box;
+        padding: 10px;
+        width: 47%;
+       span{
+        font-family: 'Cereal';
+        font-size: 16.5px;
+       }
+        label {
+            font-family: 'Cereal';
+            color:#717171 ;
+            font-size: 12px !important;
+            line-height: 20px !important;
+            font-weight: 400 !important;
+        }
+    }
+}
+
+.inner-price:focus-within {
+    box-shadow: black 0 0 0 1px inset;
+}
+
+input {
+    border: none;
+}
+
+input:focus-within {
+    border: none;
+    outline: none;
+}
+// .el-input-number:focus-within{
+//     border: none !important;
+//     outline: none !important;
+// }
+
+.between-prices {
+    margin:14px 10px 10px 10px ;
+    font-size: 21px;
+    font-family: Cereal;
+}
+
+
+.el-radio-button__original-radio:checked+.el-radio-button__inner {
+    background-color: #222222 !important;
+    box-shadow: none !important;
+}
+
+
+.vue-histogram-slider-wrapper {
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+
+.rooms-beds-filter {
+    padding: 18px 0;
+    border-bottom: 1px solid #dddddd;
+
+    h2 {
+        padding-bottom: 20px;
+        flex: 1;
+        font-size: 1.25em;
+        font-family: Cereal, Helvetica, sans-serif;
+        margin-bottom: 6px;
+    }
+    h3{
+        font-family: Cereal;
+        font-weight: 300;
+        font-size: 17px;
+        // margin: 0 0 0.4em;
+    }
+
+    // .any:nth-child(2){
+    //     width: 79px;
+    // }
+
+
+}
+
+span.el-radio-button__inner {
+    font-weight: 400 !important;
+    margin-right: 10px;
+    padding: 10px 20px !important;
+    border-radius: 30px !important;
+    min-width: 59px !important;
+    font-size: 14px !important;
+    font-family: Cereal;
+    line-height: 18px !important;
+    margin-block-start: 20px;
+    margin-block-end: 26px;
+    cursor: pointer !important;
+    text-align: center !important;
+    border: 1px solid rgb(221, 221, 221) !important;
+    background-color: #fff;
+}
+
+.el-radio-button__inner.any {
+    width: 79px;
+}
+
+.property-type-filter {
+    padding-bottom: 45px;
+    padding: 32px 0;
+    border-bottom: 1px solid #dddddd;
+    
+    h2 {
+        font-family: Cereal, Helvetica, sans-serif;
+        font-size: 22.8px;
+        // font-weight: 400;
+        padding-bottom: 18px;
+    }
+    
+    .active {
+        border: 2.5px solid black !important;
+    }
+    
+    .property-type:hover {
+        transition: .3s ;
+        border: 1.5px solid black;
+    }
+
+    .property-type {
+        width: 165.75px;
+        height: 120px;
+        margin-right: 13px;
+        border-radius: 11px;
+        border: 1px solid rgba(176, 176, 176, .5);
+        position: relative;
+        cursor: pointer;
+
+        img {
+            position: absolute;
+            max-height: 32px;
+            width: 32px;
+            top: 14px;
+            left: 16.8px;
+        }
+
+        span {
+            position: absolute;
+            bottom: 20px;
+            left: 17px;
+            font-size: 16px;
+        }
+    }
+}
+
+.amenities-filter {
+    padding: 46px 0;
+    // border-bottom: 1px solid #dddddd;
+
+    .amenities-title {
+        padding-bottom: 36px;
+    }
+    h2{
+        font-family: Cereal, Helvetica, sans-serif;
+        // font-weight:500;
+        font-size: 23px;
+    }
+    .essentials h3 {
+        margin-bottom: 16px;
+        font-family: Cereal;
+        font-weight: 500;
+        font-size: 16.5px;
+    }
+
+    .el-checkbox-group {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        gap: 12px;
+    }
+
+}
+
+// .el-checkbox-button.is-checked .el-checkbox-button__inner {
+//     color: var(--el-checkbox-button-checked-text-color);
+//     background-color: #f2f2;
+//     border-color: var(--el-checkbox-button-checked-border-color);
+//     box-shadow: -1px 0 0 0 var(--el-color-primary-light-7);
+// }
+
+// .el-checkbox_input.is-focus:not(.is-checked){
+//     background-color: black;
+// }
+// .el-checkbox-button.is-checked{
+//     color: red;
+//     background-color: black;
+//     border-color: red;
+//     box-shadow: -1px 0 0 0 var(--el-color-primary-light-7);
+// }
+// .el-checkbox{
+//     --el-checkbox-checked-bg-color: red
+// }
+
+.el-checkbox__original {
+    opacity: 1;
+    outline: 0;
+    position: absolute;
+    margin: 0;
+    width: 24px;
+    height: 24px;
+    z-index: 5;
+}
+
+.el-checkbox__label {
+    display: inline-block;
+    padding-left: 8px;
+    line-height: 1;
+    margin: 10px 0 0 11px;
+    font-family: Cereal;
+    font-size: 14px;
+}
+
+.filter-footer{
+    width: 100%;
+    height: 83px;
+    background: white;
+    -webkit-box-pack: justify!important;
+    -webkit-box-align: center!important;
+    display: flex!important;
+    flex: 0 0 auto!important;
+    border-top: 1px solid rgb(235,235,235)!important;
+    padding: 48px 24px!important;
+    align-items: center!important;
+    justify-content: space-between!important;
+    font-size: 16px!important;
+    line-height: 20px!important;
+    height: 72px;
+    margin: -25px;
+    margin-left: 0px;
+}
+.filter-footer button:nth-child(1){
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 1em;
+    font-weight: 700;
+    background-color: white;
+    color: $clr1;
+    &:hover{
+        background-color: $clr8;
+        border-radius: 10px;
+    }
+}
+.filter-footer button:nth-child(2){
+    background: #222222;
+    padding: 8px;
+    border-radius: 8px;
+    text-align: center;
+    width: 161px;
+    font-weight: $bold;
+    border-top: 1px solid rgb(235,235,235)!important;    
+    font-family: 'Circular',-apple-system,'BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;;
+    height: 48px;
+    align-items: end;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 1em;
+}
+.filter-footer button:nth-child(2):hover{
+    background:black;
+    cursor: pointer;
+}
+
+
+
+
+.irs-from, .irs-single, .irs-to{
+    visibility: hidden;
+    background-color: red;
+}
+
+
+.el-checkbox__input.is-checked+.el-checkbox__label {
+    color: $clr7;
+  }
+.el-checkbox__input.is-checked+.el-checkbox__label {
+    color: $clr7;
+  }

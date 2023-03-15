@@ -1,0 +1,60 @@
+.achievement-display{
+        grid-column: 1/1;
+        grid-row: 1/1;
+        height: fit-content;
+        
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+
+        margin-block-start: 145px;
+        padding-block-end: 30px;    
+        border-bottom: 1.5px solid $clr6;
+
+        .stay-achievement{
+               display: grid;
+               grid-template-columns: 37px 9.5fr;
+               grid-template-rows: 20px 1fr;
+
+               width: 90%;
+               font-family: Cereal-medium;
+               font-size: 16px;
+               padding-inline-start: 4px;
+               > svg{
+                        grid-column: 1/1;
+                        grid-row: 1/span 2;
+                        
+                        transform: translate(-4px, 2px);
+               }
+
+               .achievement-explanation{
+                        grid-column: 2/2;
+                        grid-row: 1/span 2;  
+               }
+
+               .achievement-title{
+                grid-column: 2/2;
+                grid-row: 1/1;  
+                }
+
+                .achievement-description{
+                        grid-column: 2/2;
+                        grid-row: 2/2;
+                        
+                        padding-block-start: 5px;
+                        font-family: Cereal;
+                        color: $minorTxt;
+                        font-size: 0.8em;
+                }
+
+        }
+
+        .stay-achievement:nth-child(2) {
+                margin-block-start: 18px;
+        }
+
+        .stay-achievement:nth-child(3) {
+                margin-block-start: 18px;
+        }
+}

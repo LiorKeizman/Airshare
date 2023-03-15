@@ -1,0 +1,142 @@
+.reviews-display{
+        width: 100%;
+        padding-block-end: 250px;
+        .details-title{
+                color: $clr1;
+                font-family: Cereal;
+                font-size: 1.2em;
+                letter-spacing: 1px;
+
+                margin-block: 37px 24px;
+                
+
+                .average-reviews{
+                        margin-inline-start: 10px;
+                        margin-inline-end: 9px;
+                }
+                .reviewers-count{
+                        font-family: inherit;
+                        margin-inline: 5px;
+                }
+        }
+        .stay-attributes{
+                display: flex;
+                flex-direction: row;
+
+                padding-block-end: 20px;
+                .attr-group{
+                        width: 50%;
+                }
+        }
+
+        .attribute{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                width: 86%;
+                color: $clr1;
+                font-family: Cereal;
+                font-size: 0.97em;
+
+                margin-block-end: 16px;
+                .attr-bar{
+                        display: grid;
+                        grid-template-columns: 1fr 2rem;
+                        grid-template-rows: 1fr;
+                        align-items: center;
+
+                        padding-inline-end: 25px;
+                        .attr-score-bar{
+                                grid-column: 1/1;
+                                grid-row: 1/1;
+                                
+                                height: 5px;
+                                width: 120px;
+                                display: inline-block;
+                                background-color: $clr7;
+                                opacity: 0.3;
+                                border-radius: 5px; 
+                                
+                        }
+        
+                        .attr-score-value{
+                                grid-column: 1/1;
+                                grid-row: 1/1;
+
+                                height: 5px;
+                                display: inline-block;
+                                background-color: $clr1;
+                                border-radius: 5px;
+                        }
+                        
+                        .attr-score-num{
+                                grid-column: 2/2;
+                                grid-row: 1/1;
+                                justify-self: self-end;
+
+                                font-weight: 600;
+                                font-size: 12px;
+                                line-height: 16px;
+                        }
+                }
+
+                
+        }
+
+        .stay-reviews-board{
+
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                .review-item{
+                        margin-block-end: 30px;
+                        width: 80%;
+                        .user-card{
+                                display: grid;
+                                grid-template-columns: 50px 1fr;
+                                grid-template-rows: 20px 20px;
+                
+                                margin-block-end: 15px;
+                                .user-image{
+                                        height: 40px;
+                                        width: 40px;
+                                        border-radius: 50%;
+                
+                                        grid-column: 1/1;
+                                        grid-row: 1/2;
+                                }
+                
+                                .user-name{
+                                        grid-column: 2/2;
+                                        grid-row: 1/1;
+                
+                                        color: $clr1;
+                                        font-family: Cereal-bold;
+                                        font-size: 0.95em;
+                                        line-height: 17px;
+                                }
+                
+                                .post-date{
+                                        grid-column: 2/2;
+                                        grid-row: 2/2;
+                
+                                        color: lighten($color: $clr7, $amount: 20) ;
+                                        font-family: Cereal;
+                                        font-size: 0.83em;
+                                        padding-top: 1px;
+                                }
+                        
+                        }
+
+                        .review-content{
+                                overflow-wrap: break-word;
+                                font-family: Cereal;
+                                color: $minorTxt;
+                                font-size: 0.9em;
+                        }
+                }
+        }
+        
+        
+}

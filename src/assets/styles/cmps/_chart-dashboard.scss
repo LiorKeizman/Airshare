@@ -1,0 +1,11 @@
+.dashboard{
+    display: flex;
+    justify-content: space-around;
+    margin-block-start: 39px;
+    height: 64.8vh;
+    translate: 0% 8%;
+    padding-bottom: 600px;
+}
+*:has(.dashboard-container) body{
+    overflow-x: hidden;
+}

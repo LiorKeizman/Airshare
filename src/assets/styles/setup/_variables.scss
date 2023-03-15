@@ -1,0 +1,58 @@
+// Colors
+$clr1: #222222;
+$clr2: #ff385c; //brand color
+$clr3: #ffffff;
+$clr4: #dfdfdf;
+$clr5: #dff0ea;
+$clr6: #dddddd;
+$clr7: #717171;
+$clr8: #F7F7F7;
+
+$minorTxt: #353535;
+$hoverGray: #F7F7F7;
+$shareCover: #ff3366;
+$errorClr: #e74f54af;
+
+// Breakpoints
+$mobile-breakpoint: 460px;
+$narrow-breakpoint: 720px;
+$normal-breakpoint: 960px;
+$wide-breakpoint: 1480px;
+
+
+//Font weight
+$light: 100;
+$medium: 400;
+$bold: 600;
+
+// Gaps
+
+$column-list-gap: 24px;
+$row-list-gap: 48px;
+
+// Border radios
+
+$light-radios: 12px;
+
+// Borders
+
+$border: 1px solid #dddddd;
+
+// Padding
+
+$padding-filter: 32px;
+
+//--breakpoint-grid_columns: 3;
+// --breakpoint-grid_column-gap: var(--ikx-k-pe); 24px
+// --breakpoint-grid_row-gap: var(--f-fw-z-a-i); 40px
+
+// .g14v8520[class][class] {
+//     display: grid;
+//     grid-auto-flow: row dense;
+//     grid-auto-rows: var( --breakpoint-grid_auto-rows, minmax(-webkit-min-content,-webkit-max-content) );
+//     grid-auto-rows: var( --breakpoint-grid_auto-rows, minmax(min-content,max-content) );
+//     grid-gap: var(--breakpoint-grid_row-gap,0) var(--breakpoint-grid_column-gap,0);
+//     grid-template-columns: var( --breakpoint-grid_column-template, repeat(var(--breakpoint-grid_columns,1),minmax(0,1fr)) );
+// }
+
+

@@ -1,0 +1,109 @@
+.login-container {
+    // margin-top: 100px;
+    height: 70vh;
+
+    .login-form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30vw;
+        border: 1px solid #dbdbdb;
+        border-radius: 13px;
+        box-shadow: 0 0 0 #000;
+        z-index: 3;
+        background-color: #fff;
+        box-shadow: -3px -4px 14px 10px rgba(0,0,0,0.38);
+        -webkit-box-shadow: -3px -4px 14px 10px rgba(0,0,0,0.38);
+        -moz-box-shadow: -3px -4px 14px 10px rgba(0,0,0,0.38);
+    }
+
+
+    .login-form-body {
+        text-align: center;
+        padding-inline: 40px;
+        padding-bottom: 15px;
+
+        h1 {
+            padding: 10px;
+        }
+    }
+
+    .login-input {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #b6b6b6;
+        border-radius: 13px;
+        margin: 5px 5px 5px 0;
+        font-size: 1rem;
+        letter-spacing: 0.3px;
+    }
+}
+
+
+.login-btn {
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    background-color: $clr2;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 13px;
+    color: #fff;
+    font-weight: 600;
+    font-family: airbnb-regular, sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+
+}
+
+.login-actions-btns {
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.login-form .btn-container .content {
+    left: 0;
+    right: 0;
+}
+
+*:has(.login-container) .header-labels {
+    display: none;
+}
+
+*:has(.login-container) header {
+    height: auto;
+    // visibility: hidden;
+    display: none;
+}
+
+*:has(.login-container) nav.top-nav.flex.justify-space-between.align-center {
+    height: 100%;
+}
+
+.overlay-login {
+    background: rgba(0, 0, 0, 0.3803921569);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 3;
+    transition: all 200ms ease-out;
+    overflow: auto;
+}
+
+.login-input:focus {
+    border: 1.5px solid black;
+}
+
+.login-input:hover {
+    cursor: text;
+}
+
+.actions-btn {
+    border: none;
+    font-size: 1rem;
+    background-color: transparent;
+    cursor: pointer;
+    color: $clr1;
+
+}
