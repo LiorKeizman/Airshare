@@ -1,22 +1,5 @@
 <script>
-// page structure => 
-// stay name
-// stay labels  + share || save
-// stay photos  {{photos details CMP}}
-// stay description + host img || {{order CMP}}
-// stay achievement 
-// stay cover ad 
-// stay inside photos carousel 
-// stay "host depiction"
-// stay options as icons
-// order dates picker
-// stay reviews
-// map section
-// more details 
-// {{ stay-details model page for: reviews, description, extended options as icons }}
 
-//TODO: get it from the store when we will got a BACKEND;
-//import {store} from '../store/store.js';
 import { stayService } from '../services/stay.service.js';
 import { svgService } from '../services/svg.service.js';
 import detailsAchievements from '../cmps/details-achievement.vue';
@@ -63,12 +46,7 @@ export default {
         loggedinUser() {
             return this.$store.getters.loggedinUser;
         },
-        // hostImg(){
-        //     return (this.currStay?.host?.pictureUrl)?this.hostImg = this.currStay.host.pictureUrl:''
-        // },
         stayName() {
-            //   let photo =  (this.currStay?.host?.pictureUrl)?this.hostImg = this.currStay.host.pictureUrl:''
-            //   this.hostImg = photo
             return (this.currStay) ? this.currStay.name : this.stayName;
         },
         staySummary() {
@@ -127,22 +105,12 @@ export default {
         reviewsCount() {
             return this.currStay?.reviews?.length || 0;
         },
-        // labelsTxt (){
-        //     let str = '';
-        //     if (this.currStay?.labels?.length > 0){
-        //         this.currStay.labels.forEach(label => {
-        //             str +=  `<a class="label" href='#'> ${label}, </a>`;
-        //         });
-        //         str = str.substring(0, str.length - 1);
-        //     }
-        //     return str;
-        // }, 
+       
         imagesUrls() {
             return (this.currStay?.imgUrls?.length > 0) ? this.currStay.imgUrls : [];
         },
         hostImg() {
             return (this.currStay?.host?.pictureUrl) ? this.currStay.host.pictureUrl : 'https://res.cloudinary.com/sprint4-triman/image/upload/v1669793675/elon_mask_ltbtp6.jpg'
-            // return (this.host?.imgUrl)? this.host?.imgUrl : '#';
         },
         hostedBy() {
             return (this.currStay?.host?.name) ? this.currStay.host.name : '';
@@ -183,7 +151,6 @@ export default {
         detailsDescription,
         detailsSchedule,
         detailsOrder,
-        fakeReviews, //remove me
 
     }
 }

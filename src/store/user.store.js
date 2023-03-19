@@ -13,24 +13,18 @@ export const userStore = {
     getters: {
         users({ users }) { return users },
         loggedinUser({ loggedinUser }) {
-             console.log("🚀 ~ file: user.store.js:16 ~ loggedinUser ~ loggedinUser", loggedinUser)
              return loggedinUser 
             },
         watchedUser({ watchedUser }) { 
-            console.log("🚀 ~ file: user.store.js:17 ~ watchedUser ~ watchedUser", watchedUser)
-            // console.log(watchedUser)
             return watchedUser 
         }
     },
     mutations: {
         setLoggedinUser(state, { user }) {
-            console.log('FROM LOGGED',user)
-            // Yaron: needed this workaround as for score not reactive from birth
             state.loggedinUser = (user)? {...user} : null
         },
         setWatchedUser(state, { user }) {
             state.watchedUser = user
-            console.log('FROM WATCHED',state.watchedUser)
 
         },       
         setUsers(state, { users }) {
@@ -45,7 +39,6 @@ export const userStore = {
     },
     actions: {
         async login({ commit }, { userCred }) {
-            console.log("🚀 ~ file: user.store.js:48 ~ login ~ userCred", userCred)
             try {
                 const user = await userService.login(userCred)
                 commit({ type: 'setLoggedinUser', user })
@@ -76,10 +69,8 @@ export const userStore = {
             }
         },
         async loadUsers({ commit }) {
-            // TODO: loading
             try {
                 const users = await userService.getUsers()
-                // console.log('THIS IS WHAT IM LOOKING ',users)
                 commit({ type: 'setUsers', users })
             } catch (err) {
                 console.log('userStore: Error in loadUsers', err)
@@ -88,9 +79,7 @@ export const userStore = {
         },        
         async loadAndWatchUser({ commit }, { userId }) {
             try {
-                console.log('HI IM FROM LOADHATRA',userId)
                 const user = await userService.getById(userId)
-                console.log('im from loadWatch',user)
                 commit({ type: 'setWatchedUser', user })
                 
             } catch (err) {

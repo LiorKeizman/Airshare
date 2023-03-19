@@ -28,7 +28,14 @@
   
   .vc-container.vc-blue {
     width: 100% !important;
-    padding: 18px 28px 10px 28px;
+    // position:absolute;
+    // left: 1%;
+    // padding: 18px 28px 10px 28px;
+  }
+  .vc-container.vc-gray {
+    // transform: translate(-50% ,50%);
+    width: 100% !important;
+    // padding: 18px 28px 10px 28px;
   }
   
   span.vc-popover-caret.direction-bottom.align-left {

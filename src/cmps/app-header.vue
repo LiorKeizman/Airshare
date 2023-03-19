@@ -211,7 +211,6 @@ export default {
     handleScroll(ev) {
 
       let pos = window.scrollY;
-      console.log(pos,'pos');
       if (pos === 0) {
         this.isSticky = false;
         this.isExpend = false;

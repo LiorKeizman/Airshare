@@ -146,7 +146,7 @@
         }
 
         div[class*="vc-popover-content-wrapper"]{
-                top: 203px !important;
+                // top: 203px !important;
         }
 
         
@@ -192,9 +192,9 @@
                 width: fit-content;
 
                 position: absolute;
-                top: 194px;
-                left: 50%;
-                transform: translate(-50%);
+                top: 91.5%;
+                // left: 50%;
+                // transform: translate(-50%);
 
                 width: 328px;
                 background-color: $clr3;
@@ -329,14 +329,18 @@ input {
         }
 
         div[class*="vc-popover-content-wrapper"] {
+                position: relative !important;
                 width: 100% !important;
-                top: 130px !important;
-                left: 59% !important;
+                top: 86% !important;
+                left: 112% !important;
                 z-index: 50 !important;
         }
 
         .vc-popover-content.direction-bottom.vc-container {
                 width: auto;
+                position:absolute;
+                top: -70px;
+                right: -15%;
         }
 
         .date-picker {
