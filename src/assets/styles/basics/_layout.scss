@@ -155,6 +155,9 @@
   // *:has(.dashboard-stats).search-wrapper .filter-preview{
   //   display: none;
   // }
+  .main-layout{
+    grid-template-columns:minmax(20px, 1fr) minmax(auto, 98vw) minmax(20px, 1fr)
+  }
   .links-container {
     a {
       img {

@@ -69,7 +69,7 @@
       <!-- <div class="container"> -->
         <div v-if="!isExpend" class="header-bottom container flex justify-space-between">
           <explore-labels v-if="!isExplore" />
-          <h3 v-if="isExplore">Stays : {{ staysLength }}</h3>
+          <!-- <h3 v-if="isExplore">Stays : {{ staysLength }}</h3> -->
           <div class="filter-wrapper">
             <div v-if="desktop" @click="isModal=true" class="stand-alone-filter">
 
@@ -90,7 +90,7 @@
 <script>
 import filterModal from '../cmps/filter-modal.vue'
 import exploreFilter from './explore-filter.vue';
-import exploreLabels from './search-labels.vue';
+import exploreLabels from './new-search-labels.vue';
 import { eventBus } from '../services/event-bus.service.js';
 
 export default {
