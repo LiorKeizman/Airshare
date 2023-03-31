@@ -1,6 +1,6 @@
 <template>
-    <!-- <button class="prev-arrow"></button> -->
-    <swiper class="swiper"  :modules="modules" :slides-per-view="1" :space-between="10"
+    
+    <swiper class="swiper"  :modules="modules" :slides-per-view="13" :space-between="10"
     :navigation="true" :breakpoints="{
         300: {
             slidesPerView: 3,
@@ -20,13 +20,12 @@
                 <img class="property-type-img" :src="getImgUrlFilter(label.src)" />
                 <span>{{ label.propertyType }}</span>
             </div>
-            
         </swiper-slide>
     </swiper>
-    <!-- <button class="next-arrow"></button> -->
+   
 </template>
 
-
+<!-- 
 <script setup>
 import { ref, onMounted } from 'vue';
 
@@ -35,7 +34,7 @@ const el = ref();
 onMounted(() => {
   setTimeout(() => {
     const prev = document.querySelector('.swiper-button-prev');
-    prev.style.visibility = 'hidden';
+    // prev.style.visibility = 'hidden';
     const next = document.querySelector('.swiper-button-next');
     next.addEventListener('click', e => {
     prev.style.visibility = 'visible';
@@ -44,7 +43,7 @@ onMounted(() => {
   
 });
 </script>
- 
+  -->
 <script>
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';

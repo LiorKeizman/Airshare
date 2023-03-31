@@ -50,7 +50,7 @@
 <script>
 import filterModal from '../cmps/filter-modal.vue'
 import exploreFilter from './explore-filter.vue';
-import exploreLabels from './search-labels.vue';
+import exploreLabels from './new-search-labels.vue';
 import { eventBus } from '../services/event-bus.service.js';
 
 export default {

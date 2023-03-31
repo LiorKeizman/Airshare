@@ -202,7 +202,7 @@ export default {
 
   -->
   <template>
-    <div class="dashboard-container">
+    <div class="dashboard-container ">
       <!-- <div class="logIn"> -->
       <div class="logIn" v-if="!getLogInUser">
         <h1 class="login-msg">In order to see your hosting summary,
@@ -225,10 +225,13 @@ export default {
             <button @click="showWishlist" class="top-btn"> Wishlist</button>
           </div>
   
-          <section v-if="showOrders" class="main-layout">
+          <section v-if="showOrders && desktop" class="main-layout">
               <orders-host />
           </section>
-          
+           <section v-if="showOrders && !desktop" class="main-layout">
+              <orders-host-mobile />
+          </section>
+           
           <div v-if="showStays" class="content-table">
               <stays-host />
           </div>
@@ -246,6 +249,7 @@ export default {
   
   <script>
   import ordersHost from '../cmps/host/orders-host.vue';
+  import ordersHostMobile from '../cmps/host/orders-host-mobile.vue';
   import staysHost from '../cmps/host/stays-host.vue';
   import chartHost from '../cmps/host/chart-host.vue';
   import wishlistHost from '../cmps/host/wishlist-host.vue';
@@ -254,12 +258,14 @@ export default {
     name: 'host-dashboard',
     components: {
       ordersHost,
+      ordersHostMobile,
       staysHost,
       chartHost,
       wishlistHost
     },
     data() {
       return {
+        desktop: window.innerWidth > 780 ? true : false,
         showWishlists: false,
         showGraphs: false,
         orders: null,
@@ -373,6 +379,7 @@ export default {
         this.showStays = false;
         this.showGraphs = true;
         this.showWishlists = false;
+        console.log(this.showGraphs);
   
       },
       showWishlist() {

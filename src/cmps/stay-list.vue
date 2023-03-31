@@ -1,6 +1,5 @@
 <template>
     <section class="stay-list-container">
-      <!-- <button @click="toAddStay()">Add Stay</button> -->
       <ul class="stay-list clean-list stay-list-layout">
         <stay-preview v-for="stay in currStays" :key="stay._id" :previewStay="stay" />
       </ul>

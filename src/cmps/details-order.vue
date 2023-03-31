@@ -28,9 +28,9 @@
           </div>
         </div>
 
-        <div class="order-stay-details flex column">
+        <!-- <div class="order-stay-details flex column">
           <img class="order-stay-image" :src="imgOrder">
-        </div>
+        </div> -->
 
       </div>
       <div class="modal-btns-container" @click="openConfirm">

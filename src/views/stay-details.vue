@@ -9,11 +9,13 @@ import detailsPhotosDisplay from '../cmps/details-photos-display.vue';
 import detailsDescription from '../cmps/details-description.vue';
 import detailsSchedule from '../cmps/details-schedule.vue';
 import detailsOrder from '../cmps/details-order.vue';
+import mobileStayDetails from '../views/mobile-stay-details.vue';
 import { fakeReviews } from '../services/stay.service.local.js'; //remove me
 
 export default {
     data() {
         return {
+            desktop: window.innerWidth > 780 ? true : false,
             currStay: null,
             host: null,
             hostImg: 'https://res.cloudinary.com/sprint4-triman/image/upload/v1669793675/elon_mask_ltbtp6.jpg'
@@ -107,7 +109,9 @@ export default {
         },
        
         imagesUrls() {
-            return (this.currStay?.imgUrls?.length > 0) ? this.currStay.imgUrls : [];
+            const img =  (this.currStay?.imgUrls?.length > 0) ? this.currStay.imgUrls : [];
+            console.log(img);
+            return img
         },
         hostImg() {
             return (this.currStay?.host?.pictureUrl) ? this.currStay.host.pictureUrl : 'https://res.cloudinary.com/sprint4-triman/image/upload/v1669793675/elon_mask_ltbtp6.jpg'
@@ -151,6 +155,8 @@ export default {
         detailsDescription,
         detailsSchedule,
         detailsOrder,
+        mobileStayDetails
+
 
     }
 }
@@ -158,7 +164,8 @@ export default {
 </script>
 
 <template>
-    <section class="details-page">
+    <mobile-stay-details v-if="!desktop" />
+    <section v-if="desktop" class="details-page">
         <section class="short-display">
             <div class="name">{{ stayName }}</div>
             <div class="short-container">
@@ -206,7 +213,6 @@ export default {
         <div class="sticky-scroll-end"></div>
         <details-reviews-list :reviewsList="reviewsObject" />
     </section>
-    <section class="details-page model">
-    </section>
+   
 </template>
 

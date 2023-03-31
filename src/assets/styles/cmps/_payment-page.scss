@@ -166,3 +166,26 @@
         border-top: 1.5px solid lightgray;
     }
 }
+
+@media screen and (max-width: 767px){
+    *:has(.payment-page) .top-bar-details{
+        margin-left: 6%;
+    }
+    *:has(.payment-page) .app-footer{
+        display: none;
+    }
+    .payment-page{
+        flex-direction: column-reverse;
+        padding-inline: 20px;
+        translate: 0% 0%;
+        .price-details{
+            margin-left: 0px;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        .btn-container{
+            bottom: 20px;
+        }
+    }
+
+}
