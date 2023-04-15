@@ -1,6 +1,6 @@
 <template>
     
-    <swiper class="swiper"  :modules="modules" :slides-per-view="13" :space-between="10"
+    <swiper class="swiper"  :modules="modules" :slides-per-view="13" :space-between="20"
     :navigation="true" :breakpoints="{
         300: {
             slidesPerView: 3,
