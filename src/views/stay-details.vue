@@ -26,7 +26,6 @@ export default {
             ; (async () => {
                 try {
                     this.currStay = await stayService.getById(this.$route.params.id, 'stays-db');
-                    //console.log('Stay from params:', this.currStay );
                 } catch (err) {
                     console.log('details page: can\'t get stay by using this id ', err);
                     throw err;
@@ -36,7 +35,6 @@ export default {
         ; (async () => {
             try {
                 this.host = await stayService.getById(this.$route.params.id, 'stays-owner');
-                console.log('host from params:', this.host);
             } catch (err) {
                 console.log('details page: can\'t get user by using this id ', err);
                 throw err;
@@ -110,7 +108,6 @@ export default {
        
         imagesUrls() {
             const img =  (this.currStay?.imgUrls?.length > 0) ? this.currStay.imgUrls : [];
-            console.log(img);
             return img
         },
         hostImg() {

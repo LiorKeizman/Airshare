@@ -30,10 +30,8 @@ window.stayService = stayService
 })();
 
 async function query(filterBy) {
-  console.log('FROM SERVICE',filterBy)
   const {range,rooms,beds,type,amenities} = filterBy
     var stays = await storageService.query(STORAGE_KEY)
-    console.log('stays from service',stays)
     if (range) {
       stays = stays.filter(stay => stay.price >= range[0] && stay.price <= range[1] )
     }

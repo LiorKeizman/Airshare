@@ -52,10 +52,8 @@ export const stayStore = {
             state.stays = stays
         },
         setFilter(state, { filterBy }) {
-            console.log('hey');
-            console.log("🚀 ~ file: stay.store.js:55 ~ setFilter ~ filterBy", filterBy)
             let prevFilter = state.filterBy
-            state.filterBy = { ...prevFilter, ...filterBy }
+            state.filterBy = { ...prevFilter, ...filterBy?.filterBy?.propertyType }
         },
         addStay(state, { stay }) {
             state.stays.push(stay)
@@ -114,9 +112,8 @@ export const stayStore = {
                 if (userId) {
                     filterBy.byUserId = userId
                 }
-                if (filterBy.propertyType) {
-                    filterBy = filterBy.propertyType
-                    console.log('IM FROM HEREEERERE', filterBy);
+                if (filterBy?.filterBy?.propertyType) {
+                    filterBy = filterBy?.filterBy?.propertyType
                 }
                 const stays = await stayService.query(filterBy)
                 context.commit({ type: 'setStays', stays })
@@ -125,20 +122,8 @@ export const stayStore = {
                 throw err
             }
         },
-        // async loadFilteredStays(context , {filterBy}) {
-        //     try {
-        //         console.log("🚀 ~ file: stay.store.js:97 ~ loadStays ~ filterBy", filterBy)
-        //         // var filterBy = context.state.filterBy ? context.state.filterBy : ''
-        //         const stays = await stayService.query(filterBy)
-        //         context.commit({ type: 'setStays', stays })
-        //         console.log(stays)
-        //     } catch (err) {
-        //         console.log('stayStore: Error in loadStays', err)
-        //         throw err
-        //     }
-        // },
+        
         setFilter({ commit, dispatch },  filterBy ) {
-            console.log("🚀 ~ file: stay.store.js:141 ~ setFilter ~ filterBy:", filterBy)
             
             commit({ type: 'setFilter', filterBy })
             dispatch({ type: 'loadStays' })

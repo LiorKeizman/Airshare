@@ -128,7 +128,6 @@ export default {
         },
         showStayDetails() {
             //add event bus
-            console.log('this.$router.params====> ' + this.$router.params);
             this.$router.push('/stay/' + this.previewStay._id);
         },
         imageUrl(name) {

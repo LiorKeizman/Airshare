@@ -53,16 +53,13 @@ computed: {
 },
 methods: {
     statusClass(order) {
-        // console.log(orders)
-        // let currOrder = this.getHostOrders.filter(order => order === orders)
-        // console.log(currOrder)
+       
         if (order.status === 'pending') return 'status-pending'
         if (order.status === 'approved') return 'status-approved'
         if (order.status === 'declined') return 'status-decline'
     },
     summarySize(orders) {
         let currOrder = this.getHostOrders.filter(order => order === orders)
-        // console.log(currOrder.stay)
         if (currOrder[0].stay.name.length > 20) {
             let desc = currOrder[0].stay.name.slice(0, 20) + '...'
             return desc
@@ -90,12 +87,10 @@ methods: {
     getGuestsAmount(orders) {
         let currOrder = this.getHostOrders.filter(order => order === orders)
         const { adults, children, pets, infants } = currOrder[0].guests
-        // console.log(adults)
         let amount = adults + children + pets + infants
         return amount
     },
     totalPrice(order){
-        // return order.totalPrice.toFixed(2)
         return (order?.totalPrice)? order.totalPrice.toLocaleString():''
 
     },
@@ -106,25 +101,16 @@ methods: {
         return order.buyer.fullname
     },
     getUserImg(order) {
-        // let currOrder = this.getHostOrders.filter(order => order === orders)
-        // currOrder.then(res => this.img = res.buyer.imgUrl)
+      rOrder.then(res => this.img = res.buyer.imgUrl)
         return order.buyer.imgUrl
     },
-    // pending(orders) {
-        
-    //     let currOrder = this.getHostOrders.filter(order => order === orders)
-    //     let order = currOrder[0]
-    //     console.log('IM FROM PENDING',order)
-    //     // const order = JSON.parse(JSON.stringify(this.hostOrder))
-    //     this.$store.dispatch({ type: "saveOrder", order , status: 'approved' })
-    // },
+    
     approve(order) {
         const newOrder = JSON.parse(JSON.stringify(order))
         
         newOrder.status = 'approved'
 
         this.$store.dispatch({ type: "saveOrder", order:newOrder})
-        console.log(order._id)
         socketService.emit('status changed', order._id)
     },
     decline(order) {

@@ -8,7 +8,7 @@
       <div  :class="{ container: headerLocation, 'inner-container': !headerLocation }">
         <nav class="top-nav flex justify-space-between align-center">
           <div v-if="desktop" class="desktop-view">
-            <router-link class="logo" to="/">
+            <router-link class="logo" to="/home">
               <div class="main-logo flex">
                 <div><img class="logo-img" src="../assets/icons/airbnb-logo.svg" /></div>
                 <h2 @click="showList">airshare</h2>
@@ -36,8 +36,8 @@
                     <a @click="usersTrips">Trips</a>
                     <!-- <a href="#/wishList" @click="showMenu = !showMenu" class="a1" v-if="getLogInUser">Wish List</a>
                     <a href="#/dashboard" @click="showMenu = !showMenu" v-if="getLogInUser">Dashboard</a> -->
-                    <a href="#/login" @click="showMenu = !showMenu" v-if="!getLogInUser">Sign up</a>
-                    <a href="#/login" @click="showMenu = !showMenu" v-if="!getLogInUser">Log in</a>
+                    <a href="#/" @click="showMenu = !showMenu" v-if="!getLogInUser">Sign up</a>
+                    <a href="#/" @click="showMenu = !showMenu" v-if="!getLogInUser">Log in</a>
                     <!-- <a href="#/" @click="logDemo" v-if="!getLogInUser">Log Demo</a> -->
                     <a href="#/become-a-host" @click="showMenu = !showMenu" v-if="!getLogInUser">airshare your home</a>
                     <a @click="logout" v-if="getLogInUser">Logout</a>
@@ -142,7 +142,7 @@ export default {
     // },
     headerLocation() {
       let { params, path } = this.$route || {};
-      this.isExplore = path !== '/';
+      this.isExplore = path !== '/home';
       this.path = path;
       let isEmpty = Object.keys(params).length === 0;
       return isEmpty;
@@ -161,14 +161,16 @@ export default {
   methods: {
     usersTrips(){
       var user = this.$store.getters.loggedinUser;
-      console.log(user)
       this.$router.push(`/trip/${user._id}`)
       this.showMenu = !this.showMenu
     },
     loggedinUser() {
       var user = this.$store.getters.loggedinUser;
-      console.log(user)
-      this.$router.push(`/dashboard/${user.id}`)
+      if(user.id){
+        this.$router.push(`/dashboard/${user.id}`)
+      }else{
+        this.$router.push(`/dashboard/${user._id}`)
+      }
       this.showMenu = !this.showMenu
     },
     setFilter(filterBy) {
@@ -196,7 +198,7 @@ export default {
       };
       try {
         await this.$store.dispatch({ type: 'login', userCred: demo });
-        this.$router.push('/');
+        this.$router.push('/home');
         this.showMenu = false;
       } catch (err) {
         console.log(err);

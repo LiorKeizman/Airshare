@@ -1,28 +1,27 @@
 <template>
-    
-    <swiper class="swiper"  :modules="modules" :slides-per-view="13" :space-between="20"
-    :navigation="true" :breakpoints="{
-        300: {
-            slidesPerView: 3,
-            spaceBetween: 0
-        },
-        768: {
-            slidesPerView: 7,
-            spaceBetween: 20
-        },
-        1024: {
-            slidesPerView: 13,
-            spaceBetween: 20
-        }
-    }">
-        <swiper-slide v-for="(label, idx) in getLabelList" ref="labels" :key="label">
-            <div @click="filter(label.propertyType)" class="labels">
-                <img class="property-type-img" :src="getImgUrlFilter(label.src)" />
-                <span>{{ label.propertyType }}</span>
-            </div>
-        </swiper-slide>
-    </swiper>
-   
+    <!-- <div v-if="labelsLoaded"> -->
+        <swiper v-if="labelsLoaded" class="swiper" :modules="modules" :slides-per-view="13" :space-between="20" :navigation="true" :breakpoints="{
+            300: {
+                slidesPerView: 3,
+                spaceBetween: 0
+            },
+            768: {
+                slidesPerView: 7,
+                spaceBetween: 20
+            },
+            1024: {
+                slidesPerView: 13,
+                spaceBetween: 20
+            }
+        }">
+            <swiper-slide v-if="getLabelList" v-for="(label, idx) in labelsLoaded" ref="labels" :key="label">
+                <div @click="filter(label.propertyType)" class="labels">
+                    <img class="property-type-img" :src="getImgUrlFilter(label.src)" />
+                    <span>{{ label.propertyType }}</span>
+                </div>
+            </swiper-slide>
+        </swiper>
+    <!-- </div> -->
 </template>
 
 <!-- 
@@ -56,47 +55,55 @@ export default {
     name: 'explore-labels',
     data() {
         return {
-            
-                modules: [Navigation],
-                labelsList: null,
-                filterBy: {
-                    propertyType: [],
-                },
 
-
-
-
-            };
-
-        },
-            methods: {
-            filter(value) {
-
-                this.filterBy.propertyType = []
-                this.filterBy.propertyType.push(value)
-                console.log("🚀 ~ file: search-labels.vue:77 ~ filter ~ filterBy", this.filterBy)
-                this.$router.push({ path: '/', query: { ...this.filterBy } });
-                this.$store.dispatch({ type: 'setFilter', filterBy: this.filterBy });
+            modules: [Navigation],
+            labelList: null,
+            filterBy: {
+                propertyType: [],
             },
-            getImgUrlFilter(file) {
-                const imgUrl = new URL(`../assets/labels-img/${file}`, import.meta.url);
-                return imgUrl;
-            }
-        },
 
-        created() {
-            this.$store.dispatch({ type: 'setLabelsList' });
+
+
+
+        };
+
+    },
+    methods: {
+        filter(value) {
+           
+            this.filterBy.propertyType = []
+            this.filterBy.propertyType.push(value)
+            this.$router.push({ path: '/home', query: { ...this.filterBy } });
+            this.$store.dispatch({ type: 'setFilter', filterBy: this.filterBy });
         },
-        computed: {
-            getLabelList() {
-                return this.$store.getters.getLabels;
-            }
+        getImgUrlFilter(file) {
+            const imgUrl = new URL(`../assets/labels-img/${file}`, import.meta.url);
+            return imgUrl;
+        }
+    },
+    // mounted() {
+    //     this.$store.dispatch({ type: 'setLabelsList' });
+    // },
+    created() {
+        this.$store.dispatch({ type: 'setLabelsList' });
+    },
+    computed: {
+        getLabelList() {
+            return this.$store.getters.getLabels;
         },
-        components: {
-            Swiper,
-                SwiperSlide
-        },
-    };
+        labelsLoaded() {
+            let arr = this.$store.getters.getLabels
+           if(arr){
+               return arr;
+           }
+           return
+        }
+    },
+    components: {
+        Swiper,
+        SwiperSlide
+    },
+};
 </script>
 
 <style></style>

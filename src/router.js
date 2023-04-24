@@ -16,6 +16,12 @@ import userWishlist from './views/user-wishlist.vue'
 const routes = [
   {
     path: '/',
+    name: 'loginSignup',
+    component: () => import('./views/login-signup.vue')
+    // component: loginSignup
+  },
+  {
+    path: '/home',
     name: 'home',
     component: () => import('./views/stay-app.vue')
     // component: stayApp
@@ -30,12 +36,6 @@ const routes = [
     path: '/chat',
     name: 'chat',
     component: chat
-  },
-  {
-    path: '/login',
-    name: 'loginSignup',
-    component: () => import('./views/login-signup.vue')
-    // component: loginSignup
   },
   {
     path: '/user/:id',

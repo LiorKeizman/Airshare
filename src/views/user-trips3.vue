@@ -58,15 +58,7 @@ export default {
             return this.$store.getters.getOrders
         },
 
-        // getStayName(trip) {
-        //     // console.log(currOrder.stay)
-        //     if (trip.stay.name > 13) {
-        //         let desc = trip.stay.name.slice(0, 13) + '...'
-        //         return desc
-        //     }
-        //     return trip.stay.name
-        // },
-
+       
     },
     methods: {
         showStayDetails(trip) {
@@ -95,7 +87,6 @@ export default {
             return created
         },
         loadTrips(orderId) {
-            console.log("🚀 ~ file: user-trips.vue:59 ~ loadTrips ~ orderId", orderId)
             let order = this.getOrders.find(order => order._id === orderId)
             if (order) {
                 this.$store.dispatch({ type: 'loadOrders', buyerId: this.$route.params.id });

@@ -117,19 +117,14 @@ export default {
             if (this.hasCalcPrice) {
                 let pricePerDay = this.pricePerNight;
                 this.priceObj.basePrice = this.currDates.daysNum * pricePerDay;
-                console.log(this.priceObj.basePrice);
-                console.log(this.currDates.daysNum);
                 this.priceObj.serviceFee = parseFloat(((this.priceObj.basePrice + this.priceObj.CleaningFee) * 1 / 7.05).toFixed(2));
                 this.priceObj.taxes = parseFloat(((this.priceObj.basePrice + this.priceObj.CleaningFee + this.priceObj.serviceFee) * 0.07).toFixed(2));
             }
         },
         onDatePicked(day) {
             if (this.currDates.isFirst) {
-                console.log(day);
                 this.currDates.startDay = new Date(day.id).getTime();
                 this.currDates.isFirst = false;
-                console.log(this.currDates.startDay)
-                // console.log(this.rangeDate);
             } else {
                 this.currDates.endDay = new Date(day.id).getTime();
                 this.currDates.isFirst = true;
@@ -217,8 +212,6 @@ export default {
 
         imagesUrls() {
             const img = (this.currStay?.imgUrls?.length > 0) ? this.currStay.imgUrls : [];
-            console.log(this.currStay);
-            console.log(img);
             return img
         },
         hostImg() {
@@ -245,7 +238,6 @@ export default {
         },
         reviewsObject() {
             if (this.currStay?.reviews?.length) {
-                console.log(JSON.parse(JSON.stringify(this.currStay.reviews)));
                 return JSON.parse(JSON.stringify(this.currStay.reviews));
             }
             return [];
@@ -265,8 +257,6 @@ export default {
         detailsOptionsList,
         detailsPhotosDisplay,
         detailsDescription,
-        // detailsSchedule,
-        // detailsOrder,
         mobileDetailsPhotos,
         detailsReviewMobile,
 
@@ -274,14 +264,7 @@ export default {
 }
 
 </script>
-<!-- <script>
-import { ref } from 'vue';
 
-const range = ref({
-  start: new Date(2020, 0, 6),
-  end: new Date(2020, 0, 10),
-});
-</script> -->
 
 <template>
     <section class="details-page mobile-page">

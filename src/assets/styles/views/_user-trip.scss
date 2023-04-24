@@ -16,11 +16,22 @@
        
     }
   }
+  *:has(.users-trips-layout)header{
+    height: auto;
+  }
   .users-trips-layout{
     display: grid;
     grid-template-columns: 1.5fr 2fr;
     grid-auto-rows: auto;
     gap: 25px;
+    &:first-child{
+      margin-top: 6%;
+      // background-color: black;
+    }
+    &:last-child{
+      margin-bottom: 8%;
+      // background-color: black;
+    }
   }
   .stats-card-right{
     box-shadow: #0000001f 0 6px 16px;

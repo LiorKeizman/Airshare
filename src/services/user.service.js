@@ -33,11 +33,9 @@ function onUserUpdate(user) {
 }
 
 async function getById(userId) {
-    console.log("🚀 ~ file: user.service.js:36 ~ getById ~ userId", userId)
     // const user = await storageService.get('user', userId)
     const user = await httpService.get(`user/${userId}`)
 
-    console.log("🚀 ~ file: user.service.js:40 ~ getById ~ user", user)
     // socketService.emit(SOCKET_EMIT_USER_WATCH, userId)
     socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
     socketService.on(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
@@ -58,11 +56,9 @@ async function update(user) {
 }
 
 async function login(userCred) {
-    console.log('loigign',userCred)
     // const users = await storageService.query('user')
     // const user = users.find(user => user.username === userCred.username)
     const user = await httpService.post('auth/login', userCred)
-    console.log('userr',user)
     if (user) {
         // socketService.login(user._id)
         return saveLocalUser(user)

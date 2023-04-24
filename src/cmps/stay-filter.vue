@@ -69,9 +69,7 @@ export default {
         }
     },
     methods: {
-        show() {
-            console.log(this.filterBy.rooms)
-        },
+       
      
         
         setFilter() {

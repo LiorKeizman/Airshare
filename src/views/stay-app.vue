@@ -49,7 +49,6 @@ export default {
   methods: {
     async setFilter(filterBy) {
       try {
-        console.log('From toy-app', filterBy)
         await this.$store.dispatch({ type: 'setFilter', filterBy })
         showSuccessMsg('Stay removed')
 
@@ -103,7 +102,6 @@ export default {
       console.log('Stay msgs:', stay.msgs)
     },  
     updateDateToParams(day){
-      console.log(day);
       if(this.datesInfo.isFirst){
         this.datesInfo.startDay = day.id;
         this.datesInfo.isFirst = false;

@@ -207,7 +207,7 @@ export default {
       <div class="logIn" v-if="!getLogInUser">
         <h1 class="login-msg">In order to see your hosting summary,
           you must log in first
-          <router-link to="/login">
+          <router-link to="/">
             <span class="under-line">login here</span>
           </router-link>
         </h1>
@@ -379,7 +379,6 @@ export default {
         this.showStays = false;
         this.showGraphs = true;
         this.showWishlists = false;
-        console.log(this.showGraphs);
   
       },
       showWishlist() {

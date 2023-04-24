@@ -121,9 +121,7 @@ export default {
             };
 
         },
-        created(){
-            console.log(this.urls);
-        },
+      
         components: {
             Swiper,
             SwiperSlide

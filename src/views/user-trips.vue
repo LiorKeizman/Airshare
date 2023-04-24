@@ -1,24 +1,26 @@
 <template>
-    <section class="users-trips-layout" v-for="trip in getOrders" >
-        <div class="stats-card trip">
-            <img @click="showStayDetails(trip)" :src=" getStayImg(trip)" >
-        </div>
-        <div class="stats-card-right trip">
+    <section>
 
-            <div class="details trip">
-                <div class="rev-stat trip">
-                    <div class="stay ellipsis stay-brand">{{ getStayName(trip) }}</div>
-                </div>
-                <div class="rev-stat trip">
-                    <span class="stat-head trip">Booking Date</span>
-                    <div class="date">{{ getBookingDate(trip) }}</div>
-                </div>
-                <div class="rev-stat trip">
-                    <span class="stat-head trip">Vacation Dates</span>
-                    <div class="dates">{{ getStartDate(trip) }}-{{ getEndDate(trip) }}</div>
-                </div>
-                <div class="rev-stat trip">
-                    <span class="stat-head trip">Total Price</span>
+        <section class="users-trips-layout" v-for="trip in getOrders" >
+            <div class="stats-card trip">
+                <img @click="showStayDetails(trip)" :src=" getStayImg(trip)" >
+            </div>
+            <div class="stats-card-right trip">
+                
+                <div class="details trip">
+                    <div class="rev-stat trip">
+                        <div class="stay ellipsis stay-brand">{{ getStayName(trip) }}</div>
+                    </div>
+                    <div class="rev-stat trip">
+                        <span class="stat-head trip">Booking Date</span>
+                        <div class="date">{{ getBookingDate(trip) }}</div>
+                    </div>
+                    <div class="rev-stat trip">
+                        <span class="stat-head trip">Vacation Dates</span>
+                        <div class="dates">{{ getStartDate(trip) }}-{{ getEndDate(trip) }}</div>
+                    </div>
+                    <div class="rev-stat trip">
+                        <span class="stat-head trip">Total Price</span>
                     <div class="total">${{ totalPrice(trip) }}</div>
                 </div>
                 <div class="rev-stat trip">
@@ -27,6 +29,7 @@
                 </div>
             </div>
         </div>
+    </section>
     </section>
             <!-- <div class="stay ellipsis">{{ getStayName(trip) }}</div>
             <div class="total">${{ trip.totalPrice }}</div>
@@ -59,7 +62,6 @@ export default {
             return (trip.totalPrice)? trip.totalPrice.toLocaleString():''
         },
         statusClass(trip) {
-            console.log(trip)
         if (trip.status === 'pending') return 'status-pending'
         if (trip.status === 'approved') return 'status-approved'
         if (trip.status === 'declined') return 'status-decline'
@@ -90,15 +92,13 @@ export default {
             return created
         },
         loadTrips(orderId) {
-            console.log("🚀 ~ file: user-trips.vue:59 ~ loadTrips ~ orderId", orderId)
             let order = this.getOrders.find(order => order._id === orderId)
             if (order) {
                 this.$store.dispatch({ type: 'loadOrders', buyerId: this.$route.params.id });
             }
         },
         getStayName(trip) {
-            // console.log(trip)
-            // console.log(currOrder.stay)
+            
             if (trip.stay.name > 20) {
                 let desc = trip.stay.name.slice(0, 20) + '...'
                 return desc

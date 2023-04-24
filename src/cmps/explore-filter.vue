@@ -246,7 +246,6 @@ export default {
     openMap(){
       this.isActive = true;
       this.isClicked = true
-      console.log( this.isActive);
     }
   },
   methods: {
@@ -328,7 +327,6 @@ export default {
       const myAnywhere = this.$refs.myAnywhere;
       myAnywhere.textContent = this.filterBy.where;
       
-      console.log(currentMonthName)
 
       // const myAnyweek = this.$refs.myAnyweek;
       // myAnyweek.textContent = currentMonthName + '' + day1 + - + day2 

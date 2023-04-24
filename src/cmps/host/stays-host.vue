@@ -69,7 +69,6 @@ export default {
     },
     methods: {
         getStayName(stay) {
-            console.log(stay);
             if (stay.name.length > 13) {
                 let desc = stay.name.slice(0, 13) + '...'
                 return desc

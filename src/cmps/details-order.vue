@@ -400,7 +400,6 @@ export default {
       if (this.currDates.isFirst) {
         this.currDates.startDay = new Date(day.id).getTime();
         this.currDates.isFirst = false;
-        console.log(this.currDates.startDay)
       } else {
         this.currDates.endDay = new Date(day.id).getTime();
         this.currDates.isFirst = true;

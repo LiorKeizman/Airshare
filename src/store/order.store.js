@@ -13,7 +13,6 @@ export const orderStore = {
         return state.orders
       },
       getCurrOrder(state){
-        console.log('IM FROM GETTER',state.currOrder)
         return state.currOrder
       }
     },
@@ -22,7 +21,6 @@ export const orderStore = {
         state.orders = orders
       },
       setCurrOrder(state ,{order}){
-        console.log('IM FROM MUTATION',order)
         state.currOrder = order
 
       },
@@ -48,10 +46,18 @@ export const orderStore = {
     },
     actions: {
       async loadOrders(context , {hostId,buyerId}) {
-        console.log("🚀 ~ file: order.store.js:54 ~ loadOrders ~ buyerId", buyerId)
         try {
-          const orders = await orderService.query(hostId,buyerId)
-          console.log(orders)
+          const orders = await orderService.query(hostId , buyerId)
+          if(hostId){
+            let myOrders = orders.filter(order => order.host.id === hostId)
+            context.commit({ type: 'setOrders', orders: myOrders })
+            return myOrders
+          }
+          if(buyerId){
+            let myOrders = orders.filter(order => order.buyer._id === buyerId)
+            context.commit({ type: 'setOrders', orders: myOrders })
+            return myOrders
+          }
           context.commit({ type: 'setOrders', orders: orders })
           return orders
         } catch (err) {
@@ -81,7 +87,6 @@ export const orderStore = {
       },
       async saveOrder(context, { order }) {
         try {
-            console.log('IM FROM STORE',order)
           const isEdit = (order._id?.length > 0)
           const savedOrder = await orderService.save(order)
           context.commit({ type: isEdit ? 'updateOrder' : 'addOrder', order: savedOrder })

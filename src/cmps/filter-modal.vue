@@ -211,11 +211,7 @@ export default {
 
         }
     },
-    created(){
-        // let stays = this.getStays
-        // console.log("🚀 ~ file: filter-modal.vue:215 ~ created ~ stays", stays)
-    // this.getStays?.forEach(stay=> this.data.push(stay.price))
-    },
+   
     methods: {
         getStays(){
             return this.$store.getters.stays
@@ -241,7 +237,6 @@ export default {
         },
         setType(target) {
             this.isActive = !this.isActive
-            console.log(target.target.innerText)
             let type = target.target.innerText
             let filter = this.filterBy.type
             if (filter.includes(type)) {
@@ -252,17 +247,10 @@ export default {
             this.filterBy.type.push(type)
         },
         setFilter() {
-            console.log('IM FROM SET FILTER',this.filterBy)
             this.$emit('setFilter', { ...this.filterBy })
         },
     },
-    computed: {
-        // getBarHeight(){
-        //     let height = utilService.getRandomIntInclusive(40,110)
-        //     console.log(height)
-        //     return height+100
-        // },
-    },
+   
     components: {
         HistogramSlider,
     }

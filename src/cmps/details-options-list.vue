@@ -33,23 +33,7 @@ export default {
             deep:true
         }
     },
-    // created(){
-    //     console.log(this.amenitiesList)
-    //     this.currAmenities = this.amenitiesList
-    // },
-    // watch:{
-    //     amenitiesList:{
-    //         handler(newVal) {
-    //             console.log(newVal)
-    //             if(newVal?.length > 0 ){
-    //                 this.currAmenities = [...newVal];
-    //             }
-    //             // .then();
-               
-    //         },
-    //         deep: true
-    //     }
-    // },
+    
     components:{
         svgService,
     }

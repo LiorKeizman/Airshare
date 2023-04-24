@@ -121,13 +121,11 @@ export default {
   methods: {
     usersTrips(){
       var user = this.$store.getters.loggedinUser;
-      console.log(user)
       this.$router.push(`/trip/${user._id}`)
       this.showMenu = !this.showMenu
     },
     loggedinUser() {
       var user = this.$store.getters.loggedinUser;
-      console.log(user)
       this.$router.push(`/dashboard/${user.id}`)
       this.showMenu = !this.showMenu
     },
@@ -150,11 +148,11 @@ export default {
       this.showMenu = false;
     },
     goHome() {
-      this.$router.push("/")
+      this.$router.push("/home")
       this.showMenu = false;
     },
     login() {
-      this.$router.push("/login")
+      this.$router.push("/")
       this.showMenu = false;
     },
     async logDemo() {
@@ -164,7 +162,7 @@ export default {
       };
       try {
         await this.$store.dispatch({ type: 'login', userCred: demo });
-        this.$router.push('/');
+        this.$router.push('/home');
         this.showMenu = false;
       } catch (err) {
         console.log(err);

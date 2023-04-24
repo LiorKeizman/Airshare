@@ -128,9 +128,7 @@ export default {
     },
     created() {
         this.$store.dispatch({ type: "getOrderById", orderId: this.$route.params.id });
-        // currOrder.then(res => this.setOrder(res))
-        // console.log(this.setOrder.stay);
-        // this.oreder = currOrder
+       r
     },
     computed: {
         dealAndDiamond() {
@@ -197,7 +195,7 @@ export default {
             this.$router.push('/stay/' + this.setOrder.stay._id)
         },
         backToPage() {
-            this.$router.push('/')
+            this.$router.push('/home')
             ElMessage.success('Order sent!')
         },
     },

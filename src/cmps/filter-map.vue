@@ -27,7 +27,6 @@ export default {
 
   methods: {
     getLocation(loc) {
-      console.log(loc);
       this.$emit('filterByMap', loc)
     }
   }
