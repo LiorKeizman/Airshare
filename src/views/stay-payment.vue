@@ -129,7 +129,7 @@ export default {
     created() {
         this.$store.dispatch({ type: "getOrderById", orderId: this.$route.params.id });
         // currOrder.then(res => this.setOrder(res))
-        console.log(this.setOrder.stay);
+        // console.log(this.setOrder.stay);
         // this.oreder = currOrder
     },
     computed: {
