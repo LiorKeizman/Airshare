@@ -86,7 +86,7 @@ export default {
     return {
       newUser: false,
       msg: '',
-      loginCred: { username: '', password: '' },
+      loginCred: { username: 'Lior Keizman', password: '1234' },
       signupCred: {
         username: '',
         password: '',
